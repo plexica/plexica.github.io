@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plexica — Multi-Tenant SaaS Platform</title>
+  <meta name="description" content="Multi-tenant SaaS platform with schema-per-tenant PostgreSQL, Keycloak multi-realm auth, and Module Federation plugins.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236C5CE7'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='system-ui' font-weight='bold'>P</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="/" class="logo">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="6" fill="#6C5CE7"/>
+          <text x="16" y="22" font-size="18" text-anchor="middle" fill="white" font-family="system-ui" font-weight="bold">P</text>
+        </svg>
+        <span>Plexica</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#quickstart">Quick Start</a>
+        <a href="#docs">Docs</a>
+        <a href="#stack">Stack</a>
+        <a href="https://github.com/plexica/plexica" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <span class="hero-badge">v2.0 — Open Source</span>
+      <h1 class="hero-title">Multi-tenant SaaS,<br>built for <span class="gradient-text">enterprise</span>.</h1>
+      <p class="hero-subtitle">
+        Schema-per-tenant isolation, multi-realm Keycloak auth,<br>
+        and a plugin system powered by Module Federation.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/plexica/plexica" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+        <a href="#quickstart" class="btn btn-secondary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Plexica?</h2>
+        <p>Enterprise-grade multi-tenancy without the complexity tax.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon isolation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Schema-per-Tenant</h3>
+          <p>Each tenant gets an isolated PostgreSQL schema. DROP SCHEMA for GDPR right to erasure. No shared data, no leaks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon auth">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3>Multi-Realm Auth</h3>
+          <p>Every tenant gets its own Keycloak realm. SAML, OIDC, social login, MFA — configured per-tenant.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon plugin">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Plugin System</h3>
+          <p>UI plugins via Module Federation, backend via HTTP proxy, event subscription via Kafka. Plugin in half a day.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon abac">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>RBAC + ABAC</h3>
+          <p>Role-based access control with attribute-based condition tree for workspace-level data isolation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon events">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Event-Driven</h3>
+          <p>Kafka/Redpanda event bus for async plugin communication. CRUD events emitted automatically on core entities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon test">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3>Zero-Mock Testing</h3>
+          <p>E2E tests run against real Keycloak, real PostgreSQL, real Kafka. What you test is what runs in production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quickstart" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Quick Start</h2>
+        <p>Up and running in 5 minutes.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-title">Terminal</span>
+        </div>
+        <pre><code><span class="hl-comment"># Clone</span>
+git clone https://github.com/plexica/plexica.git && <span style="color:var(--accent)">cd</span> plexica
+
+<span class="hl-comment"># Configure</span>
+cp .env.example .env
+
+<span class="hl-comment"># Start infrastructure</span>
+docker compose up -d
+
+<span class="hl-comment"># Install dependencies</span>
+pnpm install
+
+<span class="hl-comment"># Run migrations</span>
+pnpm --filter core-api db:migrate
+
+<span class="hl-comment"># Create a demo tenant</span>
+pnpm --filter core-api tenant:create -- --slug demo
+
+<span class="hl-comment"># Start the API (Terminal A)</span>
+pnpm --filter core-api dev
+
+<span class="hl-comment"># Start the Web UI (Terminal B)</span>
+pnpm --filter web dev</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Documentation</h2>
+        <p>Detailed specifications, architecture decisions, and project plan.</p>
+      </div>
+      <div class="docs-grid">
+        <a href="https://github.com/plexica/plexica/blob/main/docs/01-SPECIFICHE.md" class="doc-card" target="_blank" rel="noopener">
+          <span class="doc-num">01</span>
+          <h3>Specifiche</h3>
+          <p>Functional and non-functional requirements, personas, security, GDPR, and UX design.</p>
+          <span class="doc-link">Read →</span>
+        </a>
+        <a href="https://github.com/plexica/plexica/blob/main/docs/02-ARCHITETTURA.md" class="doc-card" target="_blank" rel="noopener">
+          <span class="doc-num">02</span>
+          <h3>Architettura</h3>
+          <p>System architecture, multi-tenancy, frontend/backend design, plugin system, data model.</p>
+          <span class="doc-link">Read →</span>
+        </a>
+        <a href="https://github.com/plexica/plexica/blob/main/docs/03-PROGETTO.md" class="doc-card" target="_blank" rel="noopener">
+          <span class="doc-num">03</span>
+          <h3>Progetto</h3>
+          <p>Rewrite strategy, phased project plan, risk management, success criteria, 5-7 month timeline.</p>
+          <span class="doc-link">Read →</span>
+        </a>
+        <a href="https://github.com/plexica/plexica/blob/main/docs/04-COMPARAZIONE-TECNOLOGICA.md" class="doc-card" target="_blank" rel="noopener">
+          <span class="doc-num">04</span>
+          <h3>Comparazione Tecnologica</h3>
+          <p>Technology comparison and evaluation of key infrastructure decisions.</p>
+          <span class="doc-link">Read →</span>
+        </a>
+        <a href="https://github.com/plexica/plexica/blob/main/docs/05-VALUTAZIONE-BETTER-AUTH.md" class="doc-card" target="_blank" rel="noopener">
+          <span class="doc-num">05</span>
+          <h3>Valutazione Better Auth</h3>
+          <p>Evaluation of Better Auth vs Keycloak for the authentication layer.</p>
+          <span class="doc-link">Read →</span>
+        </a>
+        <a href="https://github.com/plexica/plexica/blob/main/README.md" class="doc-card" target="_blank" rel="noopener">
+          <span class="doc-num">README</span>
+          <h3>README</h3>
+          <p>Full README with quick start, testing guide, service ports, and contribution guidelines.</p>
+          <span class="doc-link">Read →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Technology Stack</h2>
+        <p>Modern, battle-tested technologies.</p>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="stack-dot"></span><strong>Runtime</strong>Node.js + TypeScript</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Backend</strong>Fastify</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Frontend</strong>React 19 + Vite</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Database</strong>PostgreSQL + Prisma</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Auth</strong>Keycloak (multi-realm)</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Events</strong>Kafka / Redpanda</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Cache</strong>Redis</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Storage</strong>MinIO (S3-compatible)</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Plugin UI</strong>Module Federation</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Router</strong>TanStack Router</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>State</strong>TanStack Query + Zustand</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Styling</strong>Tailwind CSS + Radix UI</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>i18n</strong>react-intl</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>E2E</strong>Playwright</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>Monorepo</strong>pnpm workspace</div>
+        <div class="stack-item"><span class="stack-dot"></span><strong>CI</strong>GitHub Actions</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <h2>Ready to build with Plexica?</h2>
+      <p>Star the repo, read the docs, or contribute to the v2 rewrite.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/plexica/plexica" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/plexica/plexica/blob/main/docs/01-SPECIFICHE.md" class="btn btn-secondary" target="_blank" rel="noopener">Read the Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="6" fill="#6C5CE7"/>
+            <text x="16" y="22" font-size="18" text-anchor="middle" fill="white" font-family="system-ui" font-weight="bold">P</text>
+          </svg>
+          <span>Plexica</span>
+        </div>
+        <p class="footer-desc">Multi-tenant SaaS platform. MIT licensed.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/plexica/plexica" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/plexica/plexica/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+        <a href="https://github.com/plexica/plexica/blob/main/docs/01-SPECIFICHE.md" target="_blank" rel="noopener">Specs</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
